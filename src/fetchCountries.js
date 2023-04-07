@@ -1,12 +1,17 @@
-function fetchCountries() {
-    const countryName =
-      'https://restcountries.com/v3.1/name/' +
-      countryInput.value.trim() +
-      '?fields=name,capital,population,flags,languages';
-    return fetch(`${countryName}`).then(response => {
+export function fetchCountries(name) {
+  const url = `https://restcountries.com/v3.1/all?fields=name,flags,capital,population,languages`;
+
+  return fetch(url)
+    .then(response => {
       if (!response.ok) {
-        throw new Error(response.status);
+        throw new Error('Problem-1');
       }
       return response.json();
+    })
+    .then(countries => {
+      return countries;
+    })
+    .catch(error => {
+      console.error('Problem-2:', error);
     });
-  }
+}
