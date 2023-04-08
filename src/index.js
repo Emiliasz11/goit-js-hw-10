@@ -1,5 +1,4 @@
-import './css/styles.css';
-	
+    import './css/styles.css';
 	import debounce from 'lodash.debounce';
 	import Notiflix from 'notiflix/build/notiflix-notify-aio';
 	import 'notiflix/dist/notiflix-3.2.6.min.css';
